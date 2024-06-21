@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Shape_Calc
 {
-    internal class Shape3d
+    internal abstract class Shape3d : Shape2d
     {
+        protected double _depth;
+        public Shape3d(double length, double width, double depth) : base(length, width)
+        {
+            _depth = depth;
+        }
     }
 }

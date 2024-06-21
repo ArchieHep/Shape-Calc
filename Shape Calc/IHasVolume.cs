@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Shape_Calc
 {
-    internal interface Interface1
+    internal interface IHasVolume
     {
+        public abstract double Volume();
     }
 }

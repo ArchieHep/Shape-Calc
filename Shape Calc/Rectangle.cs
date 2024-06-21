@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Shape_Calc
 {
-    internal class Rectangle
+    internal class Rectangle : Shape2d, IHasArea
     {
+        public Rectangle(double length, double width) : base(length, width)
+        {
+        }
+
+        public double Area()
+        {
+            return _length * _width;
+        }
     }
 }

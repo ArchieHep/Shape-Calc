@@ -8,5 +8,6 @@ namespace Shape_Calc
 {
     internal interface IHasArea
     {
+        public abstract double Area();
     }
 }

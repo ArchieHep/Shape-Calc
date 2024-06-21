@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Shape_Calc
 {
-    internal class Triangle
+    internal class Triangle : Shape2d, IHasArea
     {
+        public Triangle(double length, double width) : base(length, width)
+        {
+        }
+
+        public double Area()
+        {
+            return (_length * _width) / 2; 
+
+        }
     }
 }

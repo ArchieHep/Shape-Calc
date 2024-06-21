@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Shape_Calc
 {
-    internal class Shape2d
+    internal abstract class Shape2d
     {
+        protected double _length, _width;
+
+        public Shape2d(double length, double width)
+        {
+            _length = length;
+            _width = width;
+
+        }
+
     }
 }

@@ -12,18 +12,21 @@ namespace Shape_Calc
             Shape2d shape = null;
             double length = -1, width = -1, depth = -1;
 
+            // Check all shapes have a length and a width
             if (!double.TryParse(txt_length.Text, out length) || !double.TryParse(txt_width.Text, out width))
             {
                 lbl_result.Text = "Result: Error";
                 return;
             }
 
+            // Check 3d shapes have a depth
             if(cmb_Shape.SelectedIndex >= 3 && !double.TryParse(txt_depth.Text, out depth))
             {
                 lbl_result.Text = "Result: Error";
                 return;
             }
 
+            // Create shape
             switch (cmb_Shape.SelectedIndex)
             {
                 case 0:
@@ -49,6 +52,7 @@ namespace Shape_Calc
                     return;
             }
 
+            // Calculate and display area or volume of shape
             IHasArea hasArea = shape as IHasArea;
             IHasVolume hasVolume = shape as IHasVolume;
             if (hasArea != null)
@@ -62,13 +66,13 @@ namespace Shape_Calc
 
         }
 
+        // Lock depth for 2d shapes and clear values on combo box change
         private void cmb_Shape_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_length.Clear();
             txt_width.Clear();
             txt_depth.Clear();
             txt_depth.Enabled = cmb_Shape.SelectedIndex >= 3;
-
         }
     }
 }
